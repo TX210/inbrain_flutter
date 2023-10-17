@@ -26,12 +26,12 @@ public class SwiftFlutterInbrainPlugin: NSObject, FlutterPlugin, InBrainDelegate
         channel.invokeMethod("didRecieveInBrainRewards", arguments: points)
     }
     
-    public func surveysClosed() {
+    public func surveysClosed(byWebView:completedSurvey) {
         channel.invokeMethod("surveyClosed", arguments: points)
         print("Surveys closed")
     }
     
-    public func surveysClosedFromPage() {
+    public func surveysClosedFromPage(byWebView:completedSurvey) {
         channel.invokeMethod("surveyClosedFromPage", arguments: points)
         print("Surveys closed From Page")
     }
